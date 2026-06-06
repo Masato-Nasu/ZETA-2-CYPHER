@@ -79,15 +79,6 @@ The original Java source is kept in:
 legacy/ZetaKansu.java
 ```
 
-## Deploy
-
-For Cloudflare Pages:
-
-```powershell
-cd "$env:USERPROFILE\Desktop\zeta-2-cypher-v05"
-npx wrangler pages deploy . --project-name zeta-2-cypher
-```
-
 ## Note
 
 ZETA 2 CYPHER is an experimental art cipher.  

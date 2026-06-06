@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f6f3" />
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <title>ZETA 2 CYPHER</title>
+  <link rel="stylesheet" href="styles.v0.5.0.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1>ZETA 2 CYPHER</h1>
+      <span>v0.5.0</span>
+    </header>
+
+    <section class="layout" aria-label="ZETA 2 CYPHER">
+      <article class="panel">
+        <h2>暗号化</h2>
+
+        <label class="field">
+          <span>文章</span>
+          <textarea id="messageInput" spellcheck="false"></textarea>
+        </label>
+
+        <label class="field">
+          <span>パスワード</span>
+          <div class="password-line">
+            <input id="encodePassword" type="password" autocomplete="new-password" />
+            <button id="showEncodePassword" type="button">表示</button>
+          </div>
+        </label>
+
+        <div class="actions">
+          <button id="encodeBtn" type="button" class="primary">生成</button>
+          <button id="clearEncodeBtn" type="button">クリア</button>
+        </div>
+
+        <label class="field">
+          <span>ZETA DATA</span>
+          <textarea id="cipherOutput" spellcheck="false" readonly></textarea>
+        </label>
+
+        <div class="actions wrap">
+          <button id="copyCipherBtn" type="button">コピー</button>
+          <button id="downloadCipherBtn" type="button">保存</button>
+          <button id="moveToDecodeBtn" type="button">復号へ</button>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>復号</h2>
+
+        <label class="field">
+          <span>ZETA DATA</span>
+          <textarea id="cipherInput" spellcheck="false"></textarea>
+        </label>
+
+        <div class="actions wrap file-row">
+          <label class="file-button" for="loadCipherFile">読み込む</label>
+          <input id="loadCipherFile" type="file" accept=".zeta,application/json,text/plain" />
+          <button id="clearDecodeBtn" type="button">クリア</button>
+        </div>
+
+        <label class="field">
+          <span>パスワード</span>
+          <div class="password-line">
+            <input id="decodePassword" type="password" autocomplete="current-password" />
+            <button id="showDecodePassword" type="button">表示</button>
+          </div>
+        </label>
+
+        <div class="actions">
+          <button id="decodeBtn" type="button" class="primary">復号</button>
+        </div>
+
+        <label class="field">
+          <span>結果</span>
+          <textarea id="plainOutput" spellcheck="false" readonly></textarea>
+        </label>
+
+        <div class="actions wrap">
+          <button id="copyPlainBtn" type="button">コピー</button>
+        </div>
+      </article>
+    </section>
+
+    <p id="statusText" class="status" aria-live="polite">Ready</p>
+  </main>
+
+  <script src="app.v0.5.0.js"></script>
+</body>
+</html>
